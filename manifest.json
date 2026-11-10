@@ -1,0 +1,10 @@
+{
+  "name": "PlantBiomeHeeler",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/dreamwraith/Valheim-PlantBiomeHeeler",
+  "description": "Shows where plants can grow: a terrain overlay of the biome plants actually use, with a HUD readout of the target and standing biome.",
+  "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2360",
+    "ValheimModding-Jotunn-2.30.2"
+  ]
+}

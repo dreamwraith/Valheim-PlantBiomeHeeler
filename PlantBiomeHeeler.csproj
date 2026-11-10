@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>Library</OutputType>
+    <AssemblyName>PlantBiomeHeeler</AssemblyName>
+    <RootNamespace>PlantBiomeHeeler</RootNamespace>
+    <LangVersion>12.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Version>1.0.0</Version>
+    <PackageWebsiteUrl>https://github.com/dreamwraith/Valheim-PlantBiomeHeeler</PackageWebsiteUrl>
+    <PackageDescription>Shows where plants can grow: a terrain overlay of the biome plants actually use, with a HUD readout of the target and standing biome.</PackageDescription>
+    <Authors>DreamWraith</Authors>
+    <Company>DreamWraith (https://github.com/dreamwraith)</Company>
+    <Copyright>Copyright (c) 2026 DreamWraith</Copyright>
+    <Description>$(PackageDescription)</Description>
+    <PackageProjectUrl>https://github.com/dreamwraith/Valheim-PlantBiomeHeeler</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/dreamwraith/Valheim-PlantBiomeHeeler</RepositoryUrl>
+    <NexusModId>4925</NexusModId>
+    <NexusFileId></NexusFileId>
+  </PropertyGroup>
+
+  <!-- Thunderstore dependencies written to manifest.json -->
+  <ItemGroup>
+    <ThunderstoreDependency Include="denikson-BepInExPack_Valheim-5.4.2360" />
+    <ThunderstoreDependency Include="ValheimModding-Jotunn-2.30.2" />
+  </ItemGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="src/**/*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JotunnLib" Version="2.30.2" PrivateAssets="all" ExcludeAssets="runtime" />
+  </ItemGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)ModBuild.targets" />
+</Project>
